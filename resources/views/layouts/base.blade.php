@@ -35,6 +35,53 @@
 <header id="header" class="header header-style-1">
     <div class="container-fluid">
         <div class="row">
+            <div class="topbar-menu-area">
+                <div class="container">
+                    <div class="topbar-menu right-menu">
+                        <ul>
+                            @if (Route::has('login'))
+                                @auth
+                                    @if (Auth::user()->role === 'ADM')
+                                        <li class="menu-item menu-item-has-children parent" >
+                                            <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <ul class="submenu curency" >
+                                                <li class="menu-item" >
+                                                    <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                                </li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <li class="menu-item logout-btn">
+                                                        <a href="{{ route('logout') }}">Logout</a>
+                                                    </li>
+                                                </form>
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li class="menu-item menu-item-has-children parent" >
+                                            <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <ul class="submenu curency" >
+                                                <li class="menu-item" >
+                                                    <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                </li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <li class="menu-item logout-btn">
+                                                        <a href="{{ route('logout') }}">Logout</a>
+                                                    </li>
+                                                </form>
+                                            </ul>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
+                                    <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+                                @endif
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="container">
                 <div class="mid-section main-info-area">
 
