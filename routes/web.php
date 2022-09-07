@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminDashboard;
+use App\Http\Livewire\Cart;
 use App\Http\Livewire\Checkout;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Shop;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class);
 Route::get('/shop', Shop::class)->name('shop');
 Route::get('/checkout', Checkout::class)->name('checkout');
+Route::get('/cart', Cart::class)->name('cart');
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('dashboard', UserDashboard::class)->name('dashboard');
