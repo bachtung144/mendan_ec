@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\AdminDashboard;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Shop;
 use App\Http\Livewire\User\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Home::class);
+Route::get('/shop', Shop::class)->name('shop');
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('dashboard', UserDashboard::class)->name('dashboard');

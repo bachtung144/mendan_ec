@@ -110,7 +110,7 @@
                                 <a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
                             </li>
                             <li class="menu-item">
-                                <a href="#" class="link-term mercado-item-title">Shop</a>
+                                <a href="{{ route('shop') }}" class="link-term mercado-item-title">Shop</a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="link-term mercado-item-title">Cart</a>
