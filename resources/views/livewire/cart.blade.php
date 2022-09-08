@@ -15,7 +15,7 @@
                 <ul class="products-cart">
                     <li class="pr-cart-item">
                         <div class="product-image">
-                            <figure><img src="bower_components/demo-bower/assets/images/products/digital_18.jpg" alt=""></figure>
+                            <figure><img src="bower_components/bower_ec/assets/images/products/digital_18.jpg" alt=""></figure>
                         </div>
                         <div class="product-name">
                             <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>
@@ -38,7 +38,7 @@
                     </li>
                     <li class="pr-cart-item">
                         <div class="product-image">
-                            <figure><img src="bower_components/demo-bower/assets/images/products/digital_20.jpg" alt=""></figure>
+                            <figure><img src="bower_components/bower_ec/assets/images/products/digital_20.jpg" alt=""></figure>
                         </div>
                         <div class="product-name">
                             <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>

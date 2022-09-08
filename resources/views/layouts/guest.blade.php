@@ -7,15 +7,15 @@
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/chosen.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/color-01.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/flexslider.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/chosen.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/color-01.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/flexslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bower_ec/assets/css/custom.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/orders.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toggle-button.css') }}">
@@ -86,7 +86,7 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="/" class="link-to-home"><img src="{{ asset('bower_components/demo-bower/assets/images/logo-top-1.png') }}" alt="mercado"></a>
+                        <a href="/" class="link-to-home"><img src="{{ asset('bower_components/bower_ec/assets/images/logo-top-1.png') }}" alt="mercado"></a>
                     </div>
 
                     <div class="wrap-icon right-section">
@@ -172,14 +172,14 @@
     </div>
 </footer>
 
-<script src="{{ asset('bower_components/demo-bower/assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/jquery.flexslider.js') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/jquery.sticky.js') }}"></script>
-<script src="{{ asset('bower_components/demo-bower/assets/js/functions.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/jquery.flexslider.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/jquery.sticky.js') }}"></script>
+<script src="{{ asset('bower_components/bower_ec/assets/js/functions.js') }}"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 @livewireScripts
 </body>
