@@ -1,0 +1,20 @@
+{
+  "name": "mendan_ecommerce",
+  "description": "",
+  "main": "",
+  "authors": [
+    "bachtung144 <bachtung144007@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bachtung144/bower_ec.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bower_ec": "https://github.com/bachtung144/bower_ec.git"
+  }
+}
