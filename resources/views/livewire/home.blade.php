@@ -67,9 +67,6 @@
                         @foreach ($categories as $key => $category)
                             <div class="tab-content-item {{ $key == 0 ? 'active' : '' }}" id="category_{{ $category->id }}">
                                 <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-                                    @php
-                                        $products = App\Models\Product::where('category_id', $category->id)->get()->take($noOfProducts);
-                                    @endphp
                                     @foreach ($products as $product)
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
