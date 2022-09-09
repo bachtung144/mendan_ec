@@ -10,10 +10,10 @@ class Home extends Component
 {
     public function render()
     {
-        $category = HomeCategory::find(config('constant.first_home_cate'));
+        $category = HomeCategory::find(1);
         $categories = Category::all();
-//        $noOfProducts = $category->no_of_products;
+        $noOfProducts = $category->no_of_products;
 
-        return view('livewire.home', compact('categories'))->layout('layouts.base');
+        return view('livewire.home', compact('categories','noOfProducts'))->layout('layouts.base');
     }
 }
