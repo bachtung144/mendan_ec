@@ -4,13 +4,30 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Shop extends Component
 {
+    public $sorting;
+    public $pagesize;
+
+    public function mount()
+    {
+        $this->sorting = "default";
+        $this->pagesize = 6;
+    }
+
+    use WithPagination;
+
     public function render()
     {
-        $products = Product::paginate(12);
+        switch ($this->sorting) {
+            case 'date': $products = Product::orderby('created_at', 'DESC')->paginate($this->pagesize); break;
+            case 'price': $products = Product::orderby('price', 'ASC')->paginate($this->pagesize); break;
+            case 'price-desc': $products = Product::orderby('price', 'DESC')->paginate($this->pagesize); break;
+            default: $products = Product::paginate($this->pagesize);
+        }
 
-        return view('livewire.shop', ['products'=> $products])->layout('layouts.base');
+        return view('livewire.shop', compact('products'))->layout('layouts.base');
     }
 }
