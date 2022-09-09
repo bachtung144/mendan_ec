@@ -67,20 +67,20 @@
                         @foreach ($categories as $key => $category)
                             <div class="tab-content-item {{ $key == 0 ? 'active' : '' }}" id="category_{{ $category->id }}">
                                 <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-{{--                                    @php--}}
-{{--                                        $products = App\Models\Product::where('category_id', $category->id)->get()->take($noOfProducts);--}}
-{{--                                    @endphp--}}
+                                    @php
+                                        $products = App\Models\Product::where('category_id', $category->id)->get()->take($noOfProducts);
+                                    @endphp
                                     @foreach ($products as $product)
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
-                                                <a href="{{ route('product.details', $product->slug) }}" title="{{ $product->name }}">
+                                                <a href="#" title="{{ $product->name }}">
                                                     <figure><img src="{{ asset('bower_components/bower_ec/assets/images/products/' . $product->images->get(0)->name) }}" width="800" height="800" alt="{{ $product->name }}"></figure>
                                                 </a>
                                             </div>
                                             <div class="product-info">
-                                                <a href="{{ route('product.details', $product->slug) }}" class="product-name"><span>{{ $product->name }}</span></a>
+                                                <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
                                                 <div class="wrap-price"><ins>
-                                                        <p class="product-price">${{ $product->regular_price }}</p>
+                                                        <p class="product-price">${{ $product->price }}</p>
                                                     </ins></div>
                                             </div>
                                         </div>
