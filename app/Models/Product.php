@@ -34,4 +34,9 @@ class Product extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function scopeSorting($query, $orderBy, $typeSort, $pagesize)
+    {
+        return $query->orderby($orderBy, $typeSort)->paginate($pagesize);
+    }
 }
