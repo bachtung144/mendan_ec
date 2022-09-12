@@ -22,12 +22,13 @@ class Shop extends Component
     public function render()
     {
         switch ($this->sorting) {
-            case 'date': $products = Product::orderby('created_at', 'DESC')->paginate($this->pagesize); break;
-            case 'price': $products = Product::orderby('price', 'ASC')->paginate($this->pagesize); break;
-            case 'price-desc': $products = Product::orderby('price', 'DESC')->paginate($this->pagesize); break;
+            case 'date': $products = Product::sorting('created_at', 'DESC', $this->pagesize); break;
+            case 'price': $products = Product::sorting('price', 'ASC', $this->pagesize); break;
+            case 'price-desc': $products = Product::sorting('price', 'DESC', $this->pagesize); break;
             default: $products = Product::paginate($this->pagesize);
         }
 
         return view('livewire.shop', compact('products'))->layout('layouts.base');
     }
 }
+

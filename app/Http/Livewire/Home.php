@@ -1,21 +1,32 @@
 <?php
 
 namespace App\Http\Livewire;
-
-use App\Models\Category;
-use App\Models\HomeCategory;
-use App\Models\Product;
+use App\Repositories\Category\CategoryRepositoryInterface;
+use App\Repositories\HomeCategory\HomeCategoryRepositoryInterface;
 use Livewire\Component;
 
 class Home extends Component
 {
+
+    /**
+     * @var CategoryRepositoryInterface|mixed
+     * @var HomeCategoryRepositoryInterface|mixed
+     */
+    protected $categoryRepo;
+    protected $homeCateRepo;
+
+    public function mount(CategoryRepositoryInterface $categoryRepo,
+                          HomeCategoryRepositoryInterface $homeCateRepo)
+    {
+        $this->categoryRepo = $categoryRepo;
+        $this->homeCateRepo = $homeCateRepo;
+    }
+
     public function render()
     {
-        $category = HomeCategory::find(1);
-        $categories = Category::all();
-        $noOfProducts = $category->no_of_products;
-        $products = Product::where('category_id', $category->id)->get()->take($noOfProducts);
+        $categories = $this->categoryRepo->getAll();
+        $noOfProducts = $this->homeCateRepo->getNoOfProducts();
 
-        return view('livewire.home', compact('categories','noOfProducts', 'products'))->layout('layouts.base');
+        return view('livewire.home', compact('categories','noOfProducts'))->layout('layouts.base');
     }
 }
