@@ -57,7 +57,7 @@
                             <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
                                 <div class="product product-style-3 equal-elem ">
                                     <div class="product-thumnail">
-                                        <a href="detail.html" title="{{ $product->name }}">
+                                        <a href="{{ route('product.details', ['slug' => $product->slug]) }}" title="{{ $product->name }}">
                                             <figure><img src="bower_components/bower_ec/assets/images/products/{{ $product->images->get(0)->name }}" alt="{{ $product->name }}"></figure>
                                         </a>
                                     </div>
