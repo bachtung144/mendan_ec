@@ -8,6 +8,7 @@ use Livewire\WithPagination;
 
 class Shop extends Component
 {
+    use WithPagination;
     public $sorting;
     public $pagesize;
 
@@ -16,8 +17,6 @@ class Shop extends Component
         $this->sorting = "default";
         $this->pagesize = 6;
     }
-
-    use WithPagination;
 
     public function render()
     {
