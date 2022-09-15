@@ -3,7 +3,7 @@
     <div class="container">
         <div class="wrap-breadcrumb">
             <ul>
-                <li class="item-link"><a href="#" class="link">home</a></li>
+                <li class="item-link"><a href="/" class="link">home</a></li>
                 <li class="item-link"><span>detail</span></li>
             </ul>
         </div>
@@ -36,14 +36,21 @@
                                 @endif
                             </p>
                         </div>
-                        <div class="quantity">
-                            <span>Quantity:</span>
-                            <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
+{{--                        <div class="quantity">--}}
+{{--                            <span>Quantity:</span>--}}
+{{--                            <div class="quantity-input">--}}
+{{--                                <input type="text" name="product-quatity"--}}
+{{--                                       value="1" data-max="120"--}}
+{{--                                       pattern="[0-9]*" wire:model="numProduct"--}}
+{{--                                       id="test"--}}
+{{--                                >--}}
 
-                                <a class="btn btn-reduce" href="#"></a>
-                                <a class="btn btn-increase" href="#"></a>
-                            </div>
+{{--                                <a class="btn btn-reduce" href="#"></a>--}}
+{{--                                <a class="btn btn-increase" href="#"></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <div class="wrap-butons">
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})">Add To Cart</a>
                         </div>
                     </div>
                     <div class="advance-info">

@@ -4,11 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
-use Livewire\WithPagination;
+use WithPagination;
+use Cart;
 
 class Shop extends Component
 {
-    use WithPagination;
     public $sorting;
     public $pagesize;
 
@@ -16,6 +16,14 @@ class Shop extends Component
     {
         $this->sorting = "default";
         $this->pagesize = 6;
+    }
+
+    public function store($product_id, $product_name, $product_price)
+    {
+        Cart::add($product_id, $product_name, 1, $product_price)
+            ->associate(Product::class);
+        session()->flash('success_message', 'Item added in cart');
+        return redirect()->route('cart');
     }
 
     public function render()
