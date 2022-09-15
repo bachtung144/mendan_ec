@@ -6,6 +6,7 @@ use App\Models\Images;
 use App\Models\Product;
 use App\Repositories\Product\ProductRepositoryInterface;
 use Livewire\Component;
+use Cart;
 
 class Detail extends Component
 {
@@ -19,6 +20,15 @@ class Detail extends Component
     {
         $this->slug = $slug;
         $this->productRepo = $productRepo;
+    }
+
+    public function store($product_id, $product_name, $product_price)
+    {
+        Cart::add($product_id, $product_name, 1, $product_price)
+            ->associate(Product::class);
+        session()->flash('success_message', 'Item added in cart');
+
+        return redirect()->route('cart');
     }
 
     public function render()
