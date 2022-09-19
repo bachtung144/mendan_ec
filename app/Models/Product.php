@@ -39,4 +39,12 @@ class Product extends Model
     {
         return $query->orderby($orderBy, $typeSort)->paginate($pagesize);
     }
+
+    public function  scopeSearch($query, $search, $product_cate_id, $orderBy, $typeSort, $pagesize)
+    {
+        return $query->where('name', 'like', '%' . $search . '%')
+            ->where('category_id', 'like', '%' . $product_cate_id . '%')
+            ->orderBy($orderBy, $typeSort)
+            ->paginate($pagesize);
+    }
 }

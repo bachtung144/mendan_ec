@@ -92,6 +92,8 @@
                         </a>
                     </div>
 
+                    @livewire('header-search')
+
                     <div class="wrap-icon right-section">
                         <div class="wrap-icon-section minicart">
                             <a href="{{ route('cart') }}" class="link-direction">
