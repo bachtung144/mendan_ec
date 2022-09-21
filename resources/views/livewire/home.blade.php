@@ -75,7 +75,7 @@
                                             <div class="product-thumnail">
                                                 <a href="#" title="{{ $product->name }}">
                                                     <figure>
-                                                        <img src="{{ asset('bower_components/bower_ec/assets/images/products/' . $product->images->get(0)->name) }}" width="800" height="800" alt="{{ $product->name }}">
+                                                        <img src="{{ asset('bower_components/bower_ec/assets/images/products/' . $product->images->get(0)->name) }}" style="height: 245px" alt="{{ $product->name }}">
                                                     </figure>
                                                 </a>
                                             </div>
