@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminDashboard;
+use App\Http\Livewire\Admin\Category\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\Category\AdminCategoryComponent;
+use App\Http\Livewire\Admin\Category\AdminEditCategoryComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\Checkout;
@@ -36,4 +39,8 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctu
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('dashboard', AdminDashboard::class)->name('dashboard');
+
+    Route::get('categories', AdminCategoryComponent::class)->name('categories');
+    Route::get('category/add', AdminAddCategoryComponent::class)->name('addcategory');
+    Route::get('category/edit/{categorySlug}', AdminEditCategoryComponent::class)->name('editcategory');
 });
