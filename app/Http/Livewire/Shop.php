@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use WithPagination;
@@ -34,8 +35,9 @@ class Shop extends Component
             case 'price-desc': $products = Product::sorting('price', 'DESC', $this->pagesize); break;
             default: $products = Product::paginate($this->pagesize);
         }
+        $categories = Category::all();
 
-        return view('livewire.shop', compact('products'))->layout('layouts.base');
+        return view('livewire.shop', compact('products', 'categories'))->layout('layouts.base');
     }
 }
 
