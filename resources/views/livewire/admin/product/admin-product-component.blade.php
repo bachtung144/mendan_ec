@@ -21,7 +21,7 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Image</th>
+                                <th>Thumbnail</th>
                                 <th>Name</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
