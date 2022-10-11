@@ -40,7 +40,7 @@
                         <ul>
                             @if (Route::has('login'))
                                 @auth
-                                    @if (Auth::user()->role === 'ADM')
+                                    @if (Auth::user()->role === config('constant.role_admin'))
                                         <li class="menu-item menu-item-has-children parent" >
                                             <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
@@ -85,7 +85,9 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="/" class="link-to-home"><img src="{{ asset('bower_components/bower_ec/assets/images/logo-top-1.png') }}" alt="mercado"></a>
+                        <a href="/" class="link-to-home">
+                            <img src="{{ asset('bower_components/bower_ec/assets/images/logo.png') }}" class="img-logo" alt="mercado">
+                        </a>
                     </div>
 
                     <div class="wrap-icon right-section">
