@@ -45,7 +45,7 @@ class AdminAddProductComponent extends Component
     }
 
     public function addProduct(Request $request)
-    {Add Gallery to Product
+    {
         $data = $this->validate();
         $imageName = Carbon::now()->timestamp. '.' . $this->image->extension();
         $this->image->storeAs('products', $imageName);

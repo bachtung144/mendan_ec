@@ -17,7 +17,7 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role === 'ADM') {
+        if (Auth::user()->role === config('constant.role_admin')    ) {
             return $next($request);
         } else {
             session()->flush();

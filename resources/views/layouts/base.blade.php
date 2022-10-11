@@ -39,7 +39,7 @@
                         <ul>
                             @if (Route::has('login'))
                                 @auth
-                                    @if (Auth::user()->role === 'ADM')
+                                    @if (Auth::user()->role === config('constant.role_admin'))
                                         <li class="menu-item menu-item-has-children parent" >
                                             <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
@@ -51,6 +51,9 @@
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Products" href="{{ route('admin.products') }}">Products</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Users" href="{{ route('admin.users') }}">Users</a>
                                                 </li>
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf

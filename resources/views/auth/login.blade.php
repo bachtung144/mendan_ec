@@ -17,7 +17,11 @@
                                 @if (Session::has('message'))
                                     <p class="mb-4 text-red-600">{{ Session::get('message') }}</p>
                                 @else
-                                    <x-jet-validation-errors class="mb-4 text-red-600" />
+                                    @if (Session::has('message'))
+                                        <p class="mb-4 text-red-600">{{ Session::get('message') }}</p>
+                                    @else
+                                        <x-jet-validation-errors class="mb-4 text-red-600" />
+                                    @endif
                                 @endif
                                 <form name="frm-login" method="POST" action="{{ route('login') }}">
                                     @csrf
