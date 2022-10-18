@@ -59,10 +59,10 @@
                     <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ Cart::total() }}</b></p>
                 </div>
                 <div class="checkout-info">
-                    <a class="btn btn-checkout" href="checkout.html">Checkout</a>
+                    <a class="btn btn-checkout" href="#" wire:click.prevent="checkout()">Checkout</a>
                     <a class="link-to-shop" href="{{ route('shop') }}">Continue shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </div>
-                <div class="update-clear">
+                <div class="update-clear" style="width: 200px !important;">
                     <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear shopping cart</a>
                     <a class="btn btn-update" href="#">Update shopping cart</a>
                 </div>
