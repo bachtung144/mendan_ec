@@ -13,7 +13,17 @@ class Order extends Model
         'subtotal',
         'tax',
         'total',
-        'status'
+        'status',
+        'firstname',
+        'lastname',
+        'mobile',
+        'email',
+        'line1',
+        'line2',
+        'city',
+        'province',
+        'country',
+        'zipcode',
     ];
 
     public function user()
