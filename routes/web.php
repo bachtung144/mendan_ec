@@ -4,6 +4,8 @@ use App\Http\Livewire\Admin\AdminDashboard;
 use App\Http\Livewire\Admin\Category\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\Category\AdminCategoryComponent;
 use App\Http\Livewire\Admin\Category\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\Order\AdminOrderComponent;
+use App\Http\Livewire\Admin\Order\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\Product\AdminAddProductComponent;
 use App\Http\Livewire\Admin\Product\AdminEditProductComponent;
 use App\Http\Livewire\Admin\Product\AdminProductComponent;
@@ -56,4 +58,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanc
     Route::get('product/edit/{product_slug}', AdminEditProductComponent::class)->name('editproduct');
 
     Route::get('users', AdminManageUserComponent::class)->name('users');
+
+    Route::get('orders', AdminOrderComponent::class)->name('orders');
+    Route::get('orders/{orderId}', AdminOrderDetailsComponent::class)->name('orderdetails');
 });
