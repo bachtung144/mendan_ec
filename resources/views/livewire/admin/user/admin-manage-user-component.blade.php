@@ -20,7 +20,6 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Phone</th>
                                 <th>Active</th>
                             </tr>
                             </thead>
@@ -30,7 +29,6 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
                                     <td>
                                         <label class="switch">
                                             <input wire:click.prevent="toggleActive({{ $user->id }})" type="checkbox" {{ $user->is_active ? 'checked' : '' }}>

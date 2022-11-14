@@ -15,6 +15,7 @@ use App\Http\Livewire\Detail;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Search;
 use App\Http\Livewire\Shop;
+use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,8 @@ Route::get('/cart', CartComponent::class)->name('cart');
 Route::get('/product/{slug}', Detail::class)->name('product.details');
 Route::get('/search', Search::class)->name('product.search');
 Route::get('/product-category/{categorySlug}', CategoryComponent::class)->name('product.category');
+Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
+
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('dashboard', UserDashboard::class)->name('dashboard');
