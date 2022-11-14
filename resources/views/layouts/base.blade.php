@@ -47,6 +47,9 @@
                                                     <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                                 </li>
                                                 <li class="menu-item" >
+                                                    <a title="Orders" href="{{ route('admin.orders') }}">Orders</a>
+                                                </li>
+                                                <li class="menu-item" >
                                                     <a title="Categories" href="{{ route('admin.categories') }}">Categories</a>
                                                 </li>
                                                 <li class="menu-item" >

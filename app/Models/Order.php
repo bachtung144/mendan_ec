@@ -55,4 +55,10 @@ class Order extends Model
     {
         $this->attributes['total'] = str_replace(',', '', $value);
     }
+
+    public function transaction()
+    {
+        return $this->hasOne(Transaction::class);
+    }
+
 }
