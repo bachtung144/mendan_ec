@@ -10,7 +10,9 @@ class UserOrdersComponent extends Component
 {
     public function render()
     {
-        $orders = Order::where('user_id', Auth::user()->id)->paginate(config('constant.default_pagesize'));
+        $orders = Order::where('user_id', Auth::user()->id)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(config('constant.default_pagesize'));
 
         return view('livewire.user.order.user-orders-component', compact('orders'))->layout('layouts.base');
     }

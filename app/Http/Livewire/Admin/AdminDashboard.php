@@ -11,9 +11,9 @@ class AdminDashboard extends Component
     public function render()
     {
         $data = Order::where('status', config('constant.order_delivered'));
-        $todayData = $data->whereDate('created_at', Carbon::today());
         $totalRe = $data->sum('total');
         $totalSale = $data->count();
+        $todayData = $data->whereDate('created_at', Carbon::today());
         $todaySale = $todayData->count();
         $todayRe = $todayData->sum('total');
 
