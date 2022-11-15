@@ -2,12 +2,18 @@
     <div class="container admin-table">
         <div class="row">
             <div class="col-md-12">
+                @if (Session::has('order_message'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('order_message') }}</div>
+                @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">Details</div>
                             <div class="col-md-6">
-                                <a href="{{ route('admin.orders') }}" class="btn btn-success pull-right">All Orders</a>
+                                <a href="{{ route('user.orders') }}" class="btn btn-success pull-right">All Orders</a>
+                                @if ($order->status == config('constant.ordered_status'))
+                                    <a href="#" class="btn btn-danger pull-right" style="margin-right: 10px !important;" wire:click.prevent="cancelOrder()">Cancel Order</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -73,6 +79,7 @@
                                 <h4 class="title-box">Summary</h4>
                                 <p class="summary-info"><span class="title">Subtotal</span><b class="index">${{ $order->subtotal }}</b></p>
                                 <p class="summary-info"><span class="title">Tax</span><b class="index">${{ $order->tax }}</b></p>
+                                <p class="summary-info"><span class="title">Shipping Details</span><b class="index">Freeship</b></p>
                                 <p class="summary-info"><span class="title">Total</span><b class="index">${{ $order->total }}</b></p>
                             </div>
                         </div>
@@ -102,9 +109,9 @@
                                 <td>{{ $order->email }}</td>
                             </tr>
                             <tr>
-                                <th>Line1</th>
+                                <th>Line 1</th>
                                 <td>{{ $order->line1 }}</td>
-                                <th>Line2</th>
+                                <th>Line 2</th>
                                 <td>{{ $order->line2 }}</td>
                             </tr>
                             <tr>
