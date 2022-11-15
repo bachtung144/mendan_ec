@@ -34,8 +34,9 @@ class Detail extends Component
     public function render()
     {
         $product = $this->productRepo->getProductBySlug($this->slug);
-        $images = Images::where('product_id', $product->id)->get();
+        $images = $product->images;
+        $reviews = $product->reviews;
 
-        return view('livewire.detail', compact('product', 'images'))->layout('layouts.base');
+        return view('livewire.detail', compact('product', 'images', 'reviews'))->layout('layouts.base');
     }
 }

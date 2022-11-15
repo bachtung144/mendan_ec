@@ -70,6 +70,15 @@
                                             <h5>{{ $product->pivot->quantity }}</h5>
                                         </div>
                                         <div class="price-field sub-total"><p class="price">${{ $product->price * $product->pivot->quantity }}</p></div>
+                                        @if ($order->status == config('constant.order_delivered'))
+                                            <div class="price-field sub-total">
+                                                <p class="price">
+                                                    <a href="{{ route('user.review', $product->id) }}">
+                                                        Write Review
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        @endif
                                     </li>
                                 @endforeach
                             </ul>
