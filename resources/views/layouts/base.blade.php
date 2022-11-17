@@ -74,6 +74,9 @@
                                                     <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
                                                 </li>
                                                 <li class="menu-item" >
+                                                        <a title="Dashboard" href="{{ route('user.profile') }}">{{ __('home.profile') }}</a>
+                                                    </li>
+                                                <li class="menu-item" >
                                                     <a title="Orders" href="{{ route('user.orders') }}">Orders</a>
                                                 </li>
                                                 <form method="POST" action="{{ route('logout') }}">

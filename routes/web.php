@@ -21,6 +21,7 @@ use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\Order\UserOderDetailsComponent;
 use App\Http\Livewire\User\Order\UserOrdersComponent;
 use App\Http\Livewire\User\Review\UserReviewComponent;
+use App\Http\Livewire\User\UserProfileComponent;
 use App\Http\Livewire\User\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +48,7 @@ Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('dashboard', UserDashboard::class)->name('dashboard');
-
+    Route::get('user/profile', UserProfileComponent::class)->name('profile');
     Route::get('orders', UserOrdersComponent::class)->name('orders');
     Route::get('orders/{orderId}', UserOderDetailsComponent::class)->name('orderdetails');
 
