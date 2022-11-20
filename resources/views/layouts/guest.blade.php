@@ -47,6 +47,18 @@
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                                 </li>
+                                                <li class="menu-item" >
+                                                    <a title="Orders" href="{{ route('admin.orders') }}">Orders</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Categories" href="{{ route('admin.categories') }}">Categories</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Products" href="{{ route('admin.products') }}">Products</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Users" href="{{ route('admin.users') }}">Users</a>
+                                                </li>
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
                                                     <li class="menu-item logout-btn">
@@ -60,7 +72,13 @@
                                             <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
                                                 <li class="menu-item" >
-                                                    <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                    <a title="Profile" href="{{ route('user.profile') }}">{{ __('home.profile') }}</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Password" href="{{ route('user.updatepassword') }}">{{ __('home.update-password') }}</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Orders" href="{{ route('user.orders') }}">Orders</a>
                                                 </li>
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
