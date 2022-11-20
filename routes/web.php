@@ -48,12 +48,11 @@ Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
 
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:sanctum', 'verified']], function () {
-    Route::get('dashboard', UserDashboard::class)->name('dashboard');
     Route::get('user/profile', UserProfileComponent::class)->name('profile');
     Route::get('user/update-password', ChangePasswordComponent::class)->name('updatepassword');
+
     Route::get('orders', UserOrdersComponent::class)->name('orders');
     Route::get('orders/{orderId}', UserOderDetailsComponent::class)->name('orderdetails');
-
     Route::get('orders/review/{orderProductId}', UserReviewComponent::class)->name('review');
 });
 

@@ -71,14 +71,10 @@
                                             <a title="My account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
                                                 <li class="menu-item" >
-                                                    <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-                                                </li>
-
-                                                <li class="menu-item" >
-                                                    <a title="Dashboard" href="{{ route('user.profile') }}">{{ __('home.profile') }}</a>
+                                                    <a title="Profile" href="{{ route('user.profile') }}">{{ __('home.profile') }}</a>
                                                 </li>
                                                 <li class="menu-item" >
-                                                    <a title="Dashboard" href="{{ route('user.updatepassword') }}">{{ __('home.update-password') }}</a>
+                                                    <a title="Password" href="{{ route('user.updatepassword') }}">{{ __('home.update-password') }}</a>
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Orders" href="{{ route('user.orders') }}">Orders</a>
@@ -117,15 +113,7 @@
                     @livewire('header-search')
 
                     <div class="wrap-icon right-section">
-                        <div class="wrap-icon-section minicart">
-                            <a href="{{ route('cart') }}" class="link-direction">
-                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                <div class="left-info">
-                                    <span class="index">{{ Cart::count() }} items</span>
-                                    <span class="title">CART</span>
-                                </div>
-                            </a>
-                        </div>
+                        @livewire('cart-count-component')
                         <div class="wrap-icon-section show-up-after-1024">
                             <a href="#" class="mobile-navigation">
                                 <span></span>

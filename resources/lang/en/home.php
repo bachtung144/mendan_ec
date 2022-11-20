@@ -2,5 +2,5 @@
 
 return [
     'profile' => 'Profile',
-    'update-password' => 'Change password',
+    'update-password' => 'Password',
 ];
