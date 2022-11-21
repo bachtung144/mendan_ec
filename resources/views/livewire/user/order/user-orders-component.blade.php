@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ __('orders.all_orders') }}
+                        All Orders
                     </div>
                     <div class="panel-body">
                         @if (Session::has('order_message'))

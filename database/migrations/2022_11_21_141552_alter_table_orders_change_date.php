@@ -3,10 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-
-class ChangeOrderStatus extends Migration
+class AlterTableOrdersChangeDate extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +14,8 @@ class ChangeOrderStatus extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            DB::statement("ALTER TABLE orders CHANGE COLUMN status status ENUM('1', '2', '3') DEFAULT '1'");
+            $table->dateTime('delivered_date')->change();
+            $table->dateTime('canceled_date')->change();
         });
     }
 
@@ -28,7 +27,8 @@ class ChangeOrderStatus extends Migration
     public function down()
     {
         Schema::table('orders', function (Blueprint $table) {
-            DB::statement("ALTER TABLE orders CHANGE COLUMN status status ENUM('ordered', 'delivered', 'canceled') DEFAULT 'ordered'");
+            $table->date('delivered_date')->change();
+            $table->date('canceled_date')->change();
         });
     }
 }
