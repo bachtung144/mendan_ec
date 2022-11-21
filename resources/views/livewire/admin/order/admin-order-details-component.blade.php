@@ -59,11 +59,19 @@
                                         <div class="product-name">
                                             <a class="link-to-product" href="{{ route('product.details', $product->slug) }}">{{ $product->name }}</a>
                                         </div>
-                                        <div class="price-field produtc-price"><p class="price">${{ $product->price }}</p></div>
+                                        <div class="price-field produtc-price">
+                                            <p class="price" style="margin-top: 10px !important;">
+                                                ${{ $product->price }}
+                                            </p>
+                                        </div>
                                         <div class="quantity">
                                             <h5>{{ $product->pivot->quantity }}</h5>
                                         </div>
-                                        <div class="price-field sub-total"><p class="price">${{ $product->price * $product->pivot->quantity }}</p></div>
+                                        <div class="price-field sub-total">
+                                            <p class="price" style="margin-top: 10px !important;">
+                                                ${{ $product->price * $product->pivot->quantity }}
+                                            </p>
+                                        </div>
                                     </li>
                                 @endforeach
                             </ul>
