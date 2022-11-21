@@ -73,7 +73,7 @@
                                     @foreach ($products as $product)
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
-                                                <a href="#" title="{{ $product->name }}">
+                                                <a href="{{ route('product.details', $product->slug) }}" title="{{ $product->name }}">
                                                     <figure>
                                                         <img src="{{ asset('bower_components/bower_ec/assets/images/products/' . $product->images->get(0)->name) }}" style="height: 245px" alt="{{ $product->name }}">
                                                     </figure>
