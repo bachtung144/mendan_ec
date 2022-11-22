@@ -88,7 +88,6 @@
                                 <h4 class="title-box">Summary</h4>
                                 <p class="summary-info"><span class="title">Subtotal</span><b class="index">${{ $order->subtotal }}</b></p>
                                 <p class="summary-info"><span class="title">Tax</span><b class="index">${{ $order->tax }}</b></p>
-                                <p class="summary-info"><span class="title">Shipping Details</span><b class="index">Freeship</b></p>
                                 <p class="summary-info"><span class="title">Total</span><b class="index">${{ $order->total }}</b></p>
                             </div>
                         </div>

@@ -64,7 +64,6 @@
                 </div>
                 <div class="update-clear" style="width: 200px !important;">
                     <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear shopping cart</a>
-                    <a class="btn btn-update" href="#">Update shopping cart</a>
                 </div>
             </div>
             @else
