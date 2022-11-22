@@ -70,6 +70,22 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Gallery</label>
+                            <div class="col-md-4">
+                                <input type="file" class="input-file" wire:model="newGalleryImages" multiple>
+                                @if ($newGalleryImages)
+                                    @foreach ($newGalleryImages as $image)
+                                        <img src="{{ $image->temporaryUrl() }}" width="120" />
+                                    @endforeach
+                                @else
+                                    @foreach ($galleryImages as $image)
+                                        <img src="{{ asset('bower_components/bower_ec/assets/images/products/' . $image->name) }}" width="120" />
+                                    @endforeach
+                                @endif
+                                @error('galleryImages') <p class="text-danger">{{ $message }}</p> @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Category</label>
                             <div class="col-md-4">
                                 <select class="form-control" wire:model="category_id">

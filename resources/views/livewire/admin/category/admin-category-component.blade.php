@@ -29,14 +29,14 @@
                             <tbody>
                             @foreach ($categories as $category)
                                 <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->slug }}</td>
-                                    <td>
+                                    <td class="col-md-1">{{ $category->id }}</td>
+                                    <td class="col-md-1">{{ $category->name }}</td>
+                                    <td class="col-md-1">{{ $category->slug }}</td>
+                                    <td class="col-md-1">
                                         <a href="{{ route('admin.editcategory', $category->slug) }}">
                                             <i class="fa fa-edit fa-2x"></i>
                                         </a>
-                                        <a href="#" wire:click.prevent="deleteCategory({{ $category->id }})">
+                                        <a href="#" wire:click.prevent="deleteCategory({{ $category->id }})" class="margin-cus">
                                             <i class="fa fa-times fa-2x text-danger"></i>
                                         </a>
                                     </td>

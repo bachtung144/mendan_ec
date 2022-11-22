@@ -20,7 +20,7 @@ class UserOderDetailsComponent extends Component
     {
         $order = Order::find($this->orderId);
         $order->status = config('constant.order_canceled');
-        $order->canceled_date = DB::raw('CURRENT_DATE');
+        $order->canceled_date = DB::raw('CURRENT_TIMESTAMP');
         $order->save();
         session()->flash('order_message', 'This order has been canceled successfully');
     }

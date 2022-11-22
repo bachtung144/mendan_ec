@@ -25,6 +25,8 @@ class AdminEditProductComponent extends Component
     public $category_id;
     public $product_id;
     public $newimage;
+    public $galleryImages;
+    public $newGalleryImages;
     protected $rules = [
         'name' => 'required',
         'slug' => 'required',
@@ -53,6 +55,7 @@ class AdminEditProductComponent extends Component
         $this->category_id = $product->category_id;
         $this->image = $product->images->get(0)->name;
         $this->product_id = $product->id;
+        $this->galleryImages = $product->images;
     }
 
     public function generateSlug()
@@ -64,14 +67,27 @@ class AdminEditProductComponent extends Component
     {
         $data = $this->validate();
         $product = Product::find($this->product_id);
-        $images = Images::where('product_id', $this->product_id)->first();
         $product->update($data);
+        $thumbnail = $product->images->first();
+
         if ($this->newimage) {
             $imageName = Carbon::now()->timestamp. '.' . $this->newimage->extension();
             $this->newimage->storeAs('products', $imageName);
-            $images->name = $imageName;
-            $images->update();
+            $thumbnail->name = $imageName;
+            $thumbnail->update();
         }
+
+        if ($this->newGalleryImages) {
+            $product->images()->delete();
+            $product->images()->create(['name' => $thumbnail->name]);
+
+            foreach ($this->newGalleryImages as $key => $newGalleryImage) {
+                $newGalleryImageName = Carbon::now()->timestamp. $key . '.' . $newGalleryImage->extension();
+                $newGalleryImage->storeAs('products', $newGalleryImageName);
+                $product->images()->create(['name' => $newGalleryImageName]);
+            }
+        }
+
         session()->flash('message', 'Product has been updated successfully');
     }
 

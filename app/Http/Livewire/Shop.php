@@ -5,13 +5,14 @@ namespace App\Http\Livewire;
 use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
-use WithPagination;
+use Livewire\WithPagination;
 use Cart;
 
 class Shop extends Component
 {
     public $sorting;
     public $pagesize;
+    use WithPagination;
 
     public function mount()
     {
